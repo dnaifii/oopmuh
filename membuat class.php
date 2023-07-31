@@ -1,19 +1,19 @@
 <?php
 
 
-class BarangRumah {
+class BarangBapak {
     //properties
     protected $_nama;
-    private $_kecepatan;
-    public $_merk;
+    private $_bensin;
+    public $_kecepatan;
 
-    public function __construct($nama, $kecepatan) {
+    public function __construct($nama, $bensin) {
         $this->_nama = $nama;
-        $this->_kecepatan = $kecepatan;
+        $this->_bensin = $bensin;
     }
 
     public function __destruct() {
-        echo "Object {$this->_nama} telah dihapus.";
+        echo "Object {$this->_nama} telah diparkirin.";
     }
     // methods
     public function setNama($nama) {
@@ -25,14 +25,14 @@ class BarangRumah {
     }
 
     public function setkecepatan($kecepatan) {
-        $this->_kecepatan = $kecepatan;
+        $this->_bensin = $kecepatan;
     }
 
-    public function getKecepatan() {
+    public function getkecepatan() {
         return $this->_kecepatan;
     }
     public function hidupkan() {
-        echo "{$this->_nama} dihidupkan dengan kecepatan {$this->_kecepatan}.";
+        echo "{$this->_nama} dihidupkan dengan bensin {$this->_kecepatan}.";
     }
 
     public function matikan() {
@@ -40,12 +40,12 @@ class BarangRumah {
     }
     
     public function info() {
-        return "Object: {$this->_nama}, Kecepatan: {$this->_kecepatan},";
+        return "Object: {$this->_nama}, kecepatan: {$this->_kecepatan},";
     }
     
 }
 
-class KipasAngin extends BarangRumah {
+class Motorbebek extends BarangBapak {
 
     public function __construct($nama, $kecepatan) {
         parent::__construct($nama, $kecepatan);
@@ -53,13 +53,13 @@ class KipasAngin extends BarangRumah {
     
 }
 // instansiasi objek dari masing masing class
-$kipas_angin_kamar = new KipasAngin("Kipas Angin Kamar",2);
+$motor_bebek_bapak = new Motorbebek("motor bebek bapak",20);
 
 // set semua properti dari objeknya
-$kipas_angin_kamar->setNama("Kipas Angin Kamar Tidur");
-$kipas_angin_kamar->setkecepatan("2");
-$kipas_angin_kamar->_merk="cosmos";
+$motor_bebek_bapak->setNama("motor bebek bapak");
+$motor_bebek_bapak->setkecepatan("20");
+$motor_bebek_bapak->_merk="yamaha";
 
 // panggil method dari objeknya
-$kipas_angin_kamar->hidupkan(); // Output: Kipas Angin Kamar Tidur dihidupkan dengan kecepatan 2.
-$kipas_angin_kamar->matikan(); // Output: Kipas Angin Kamar Tidur dimatikan.
+$motor_bebek_bapak->hidupkan(); // Output: motor bebek bapak dihidupkan dengan kecepatan 20.
+$motor_bebek_bapak->matikan(); // Output: motor bebek bapak dimatikan.
